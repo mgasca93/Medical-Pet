@@ -1,0 +1,26 @@
+:root{
+    --main-bg-color:#1de9b6;
+    --dark-main-bg-color:#00b686;
+    --light-main-bg-color:#6effe8;
+    --main-text-color:#212121;
+    --main-accent-color:#e040fb;
+    --main-secondary-text-color:#757575;
+    --main-divider-color:#BDBDBD;
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.primary_txt{
+    color:var(--main-bg-color);
+}
+.dark_primary_txt{
+    color:(--dark-main-bg-color);
+}
+.light_primary_txt{
+    color:var(--light-main-bg-color);
+}
