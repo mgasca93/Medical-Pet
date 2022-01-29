@@ -11,13 +11,14 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/login">Login</a>
+                        <a class="nav-link <?= isItemActive('login'); ?>" aria-current="page" href="/login">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/registro">Registro</a>
+                        <a class="nav-link <?= isItemActive('registro'); ?>" href="/registro">Registro</a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
 </nav>
+

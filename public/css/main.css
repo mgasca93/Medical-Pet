@@ -16,11 +16,11 @@
 }
 
 .primary_txt{
-    color:var(--main-bg-color);
+    color:var(--main-bg-color) !important;
 }
 .dark_primary_txt{
-    color:(--dark-main-bg-color);
+    color:var(--dark-main-bg-color) !important;
 }
 .light_primary_txt{
-    color:var(--light-main-bg-color);
+    color:var(--light-main-bg-color) !important;
 }
