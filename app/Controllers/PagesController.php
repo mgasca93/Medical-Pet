@@ -12,8 +12,7 @@ class Pagescontroller extends Controller{
         View::render('Templates/header.php',[
             'title' => 'Login'
         ]);
-        View::render('Partials/navbar.php');
-        View::render('Welcome/index.php');
+        View::render('Login/index.php');
         View::render('Templates/footer.php');
 
     }
@@ -23,8 +22,7 @@ class Pagescontroller extends Controller{
         View::render('Templates/header.php',[
             'title' => 'Registro'
         ]);
-        View::render('Partials/navbar.php');
-        View::render('Welcome/index.php');
+        View::render('Register/index.php');
         View::render('Templates/footer.php');
 
     }
