@@ -70,4 +70,5 @@ abstract class Controller
     protected function after()
     {
     }
+
 }

@@ -13,14 +13,14 @@ use Horus\Config\Env;
 abstract class AbstractModel
 {
 
-    private $conn;
+    protected $conn;
     private static $db_user = Env::DB_USER;
     private static $db_pass = Env::DB_PASSWORD;
     private static $db_host = Env::DB_HOST;
     private static $db_driver = Env::DB_DRIVER;
     private static $db_charset = ENV::DB_CHARSET;
 
-    protected $db_name = 'my_db';
+    protected $db_name = ENV::DB_NAME;
     protected $rows = [];
     protected $query;
 
@@ -34,9 +34,9 @@ abstract class AbstractModel
      *
      * @return mixed
      */
-    private function open_connection()
+    protected function open_connection()
     {
-        $connection = self::$db_driver . ":host=" . self::$db_host . ";dbname=" . $this->db_name . ":charset=" . self::$db_charset;
+        $connection = self::$db_driver . ":host=" . self::$db_host . ";dbname=" . $this->db_name . ";charset=" . self::$db_charset;
         $options = [
             PDO::ATTR_ERRMODE           => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_EMULATE_PREPARES  => FALSE
@@ -49,9 +49,9 @@ abstract class AbstractModel
      * 
      * @return void
      */
-    private function close_connection()
+    protected function close_connection()
     {
-        $this->conn->close();
+        $this->conn = NULL;
     }
 
     /**
@@ -62,8 +62,10 @@ abstract class AbstractModel
     protected function execute_query()
     {
         $this->open_connection();
-        $this->conn->query($this->query);
+        $results = $this->conn->query($this->query);
         $this->close_connection();
+
+        return $results;
     }
 
 }

@@ -18,6 +18,10 @@ class App{
         #Agregamos las rutas con el metodo add
         $router->add('', ['controller' => 'PagesController', 'action' => 'login']);
         $router->add('login', ['controller' => 'PagesController', 'action' => 'login']);
+        $router->add('login/validate', ['controller' => 'LoginController', 'action' => 'loginValidate']);
+        $router->add('logout', ['controller' => 'LoginController', 'action' => 'logout']);
+
+        $router->add('dashboard', ['controller' => 'Dashboard\\DashboardController', 'action' => 'index']);
         $router->add('registro', ['controller' => 'PagesController', 'action' => 'register']);
         
         #Se define la estructura de la ruta
