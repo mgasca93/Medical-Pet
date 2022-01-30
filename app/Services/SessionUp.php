@@ -31,7 +31,7 @@ class SessionUp{
     * Esta funcion se encarga de verificar 
     * si existen sessiones activas
     */
-    public function exists(){
+    public static function exists(){
         if(isset($_SESSION) && count($_SESSION) > 0){
             return true;
         }else{
