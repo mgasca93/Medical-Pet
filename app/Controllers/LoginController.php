@@ -31,7 +31,7 @@ class LoginController extends Controller{
         endif;
 
         
-        if( $session->exists() ) :
+        if( \Horus\App\Services\SessionUp::exists() ) :
             redirect('/dashboard');
         else : 
             redirect('/login');

@@ -3,6 +3,7 @@
 namespace Horus\App\Controllers\Dashboard;
 
 use Horus\Core\Controller;
+use Horus\Core\View;
 
 class DashboardController extends Controller
 {
@@ -16,7 +17,11 @@ class DashboardController extends Controller
     }
 
     public function index() {
-        debug($_SESSION);
+        
+        View::render('Templates/header.php', [
+            'title' => 'Dashboard'
+        ]);
+        View::render('Templates/footer.php');
     }
 
 }
