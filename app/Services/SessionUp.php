@@ -9,7 +9,7 @@ class SessionUp{
      * Esta funcion recibe un arreglo con los valores
      * para establecer las session
      */
-    public function up(array $sessionsData){
+    public function up(object $sessionsData){
         foreach($sessionsData as $clave => $valor){
             $_SESSION[$clave] = $valor;
         }
@@ -31,7 +31,7 @@ class SessionUp{
     * Esta funcion se encarga de verificar 
     * si existen sessiones activas
     */
-    public function sessionExists(){
+    public function exists(){
         if(isset($_SESSION) && count($_SESSION) > 0){
             return true;
         }else{
