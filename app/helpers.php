@@ -43,9 +43,41 @@ function debug( $data ) {
  *
  * @return void
  */
-function redirect( $url ) {
+function redirect( $url, $data = [] ) {
+
+    if(array_key_exists('message', $data)) :
+        $_SESSION['message'] = $data['message'];
+    endif;
+   
     header( "location: $url" );    
     die();
+}
+
+/**
+ * Funcion que me permite crear un mensaje
+ * flash a partir de una session nombrada message
+ * 
+ * @return string
+ */
+function showMessage(){
+    $message = $_SESSION['message'];
+    unset($_SESSION['message']);
+    return $message;
+}
+
+/**
+ * Funcion que me permite validar si existe un mensaje
+ * flash a partir de una session nombrada message
+ * 
+ * @return string
+ */
+function messageExists(){
+    $flag = false;
+    if(isset($_SESSION['message'])) :
+        $flag = true;
+    endif;
+
+    return $flag;
 }
 
 /**
