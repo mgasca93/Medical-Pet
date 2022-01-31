@@ -32,7 +32,7 @@ class SessionUp{
     * si existen sessiones activas
     */
     public static function exists(){
-        if(isset($_SESSION) && count($_SESSION) > 0){
+        if(isset($_SESSION['id'])){
             return true;
         }else{
             return false;
