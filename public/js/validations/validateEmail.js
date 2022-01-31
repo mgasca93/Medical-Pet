@@ -12,10 +12,10 @@ document.addEventListener("DOMContentLoaded", function(){
                 success: function(response){
                     switch (response.message) {
                         case 'success' :
-                            isValidEmail();
+                            isValid('email', 'email');
                         break;
                         case 'error' :
-                            isInvalidEmail();
+                            isInvalid('email', 'email');
                         break;
                     } 
                 },
@@ -24,25 +24,9 @@ document.addEventListener("DOMContentLoaded", function(){
                 }
             });
         }else{
-            console.log("Ejecuto esto");
-            resetField(); 
+            resetField('email', 'email'); 
         }
        
     }, false);
 }, false);
 
-function isValidEmail(){
-    email.classList.remove('is-invalid');
-    email.classList.add('is-valid');
-    submit.classList.remove('disabled');
-}
-function isInvalidEmail(){
-    email.classList.remove('is-valid');
-    email.classList.add('is-invalid');
-    submit.classList.add('disabled');
-}
-function resetField(){
-    email.classList.remove('is-invalid');
-    email.classList.remove('is-valid');
-    submit.classList.remove('disabled');
-}

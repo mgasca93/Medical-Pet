@@ -10,13 +10,12 @@ document.addEventListener("DOMContentLoaded", function(){
                 type: 'GET',
                 dataType: 'json',
                 success: function(response){
-                    console.log(response);
                     switch (response.message) {
                         case 'success' :
-                            isValidUsername();
+                            isValid('username', 'username');
                         break;
                         case 'error' :
-                            isInvalidUsername();
+                            isInvalid('username', 'username');
                         break;
                     } 
                 },
@@ -25,24 +24,9 @@ document.addEventListener("DOMContentLoaded", function(){
                 }
             });
         }else{
-            resetField(); 
+            resetField('username', 'username'); 
         }
        
     }, false);
 }, false);
 
-function isValidUsername(){
-    username.classList.remove('is-invalid');
-    username.classList.add('is-valid');
-    submit.classList.remove('disabled');
-}
-function isInvalidUsername(){
-    username.classList.remove('is-valid');
-    username.classList.add('is-invalid');
-    submit.classList.add('disabled');
-}
-function resetField(){
-    username.classList.remove('is-invalid');
-    username.classList.remove('is-valid');
-    submit.classList.remove('disabled');
-}
