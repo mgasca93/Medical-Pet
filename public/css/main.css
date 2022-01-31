@@ -1,12 +1,18 @@
 :root{
-    --main-bg-color:#e040fb;
-    --dark-main-bg-color:#00b686;
-    --light-main-bg-color:#6effe8;
+
+    --main-bg-color: #e040fb;
+    --light-main-bg-color:#ff79ff;
+    --dark-main-bg-color:#aa00c7;
     --main-text-color:#212121;
-    --main-accent-color:#e040fb;
+    --main-accent-color: #FFC107;
     --main-secondary-text-color:#757575;
     --main-divider-color:#BDBDBD;
     --light-text: #ffffff;
+
+    --success-bg-color: #ff79ff;
+    --info_bg-color: #8f9bff;
+    --warning-bg-color: #ffdd71;
+    --danger-bg-color:#ff79b0;
 }
 
 *{
@@ -59,7 +65,7 @@
 }
 
 .item-active{
-    color: var(--main-accent-color) !important;
+    color: var(--main-bg-color) !important;
     font-weight: 700 !important;
     animation-duration: 0.5s !important;
 }
@@ -83,6 +89,28 @@
     color:var(--light-main-bg-color) !important;
 }
 
+/**
+*   Alerts background
+**/
+.success-alert{
+    background-color:var(--success-bg-color) !important;
+    color: var(--main-text-color) !important;
+}
+
+.info-alert{
+    background-color:var(--info-bg-color) !important;
+    color: var(--main-text-color) !important;
+}
+
+.warnin-alert{
+    background-color:var(--warning-bg-color) !important;
+    color: var(--main-text-color) !important;
+}
+
+.warnin-alert{
+    background-color:var(--danger-bg-color) !important;
+    color: var(--main-text-color) !important;
+}
 
 /**
 * Media querys para pantallas con un ancho maximo de 992px

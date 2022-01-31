@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/main.css"/>
+    <link rel="icon" href="data:,">
     <title><?= setTitle($title); ?></title>
 </head>
 <body>
@@ -21,7 +22,7 @@
                     <a class="nav-link <?= isItemActive('login'); ?>" href="/login">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= isItemActive('registro'); ?>" href="/registro">Registro</a>
+                    <a class="nav-link <?= isItemActive('register'); ?>" href="/register">Registro</a>
                 </li>
                 <?php endif; ?>
                 <?php if ( auth() ) :?>
@@ -32,7 +33,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <span>
                             <i class="far fa-bell lead"></i>
-                            <span class="position-absolute top-10 start-90 translate-middle badge rounded-pill bg-danger">
+                            <span class="position-absolute top-10 start-90 translate-middle badge rounded-pill bg-dark">
                                 0
                             </span>
                         </span>
