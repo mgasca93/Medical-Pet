@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(){
     const username = document.getElementById('username');
-    const submit = document.getElementById('submit');
     username.addEventListener('keyup', function(event){
         
         if(event.target.value.length > 0){

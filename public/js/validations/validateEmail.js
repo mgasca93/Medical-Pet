@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(){
     const email = document.getElementById('email');
-    const submit = document.getElementById('submit');
     email.addEventListener('keyup', function(event){
 
         if(event.target.value.length > 0){

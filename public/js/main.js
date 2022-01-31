@@ -14,10 +14,10 @@ function setStatusButtonSubmit(){
     
     switch(flag){
         case true :
-            submit.classList.remove('disabled');
+            document.getElementById('submit').classList.remove('disabled');
         break;
         case false:
-            submit.classList.add('disabled');
+            document.getElementById('submit').classList.add('disabled');
         break;
     }
 
