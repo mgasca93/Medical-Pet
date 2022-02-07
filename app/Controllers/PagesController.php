@@ -16,23 +16,18 @@ class Pagescontroller extends Controller{
     }
     
     public function login(){
-
-        View::render('Templates/header.php',[
+        $data = [
             'title' => 'Login'
-        ]);
-        View::render('Login/index.php');
-        View::render('Templates/footer.php');
+        ];
+        View::render('Login/index.php', $data);
 
     }
 
     public function register(){
-
-        View::render('Templates/header.php',[
+        $data = [
             'title' => 'Registro'
-        ]);
-        View::render('Register/index.php');
-        View::render('Templates/footer.php');
-
+        ];
+        View::render('Register/index.php', $data);
     }
 
 }
