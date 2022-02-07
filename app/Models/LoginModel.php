@@ -21,8 +21,19 @@ class LoginModel extends Model{
             foreach( $results->fetch(PDO::FETCH_ASSOC) as $propiedad => $valor ) :
                 $user->$propiedad = $valor;
             endforeach;
+
+            /**
+             * Valido si el usuario esta activo
+             */
+            if($user->status == '0') :
+                $user = array();
+                $user['status'] = 400;
+                $user['message'] = 'El usuario se encuentra desactivado.';
+            endif;
         else :
-            $user = [];
+            $user = array();
+            $user['status'] = 400;
+            $user['message'] = 'El usuario no existe en el sistema';
         endif;
         
         $this->close_connection();

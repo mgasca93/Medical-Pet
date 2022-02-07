@@ -26,15 +26,17 @@ class LoginController extends Controller{
          * Verifico si la respuesta es object y creo las sessions, 
          * si no es object es por que no esta registrado en el sistema.
          */
-        if( is_object( $results )) :
+        if( is_object( $results )) {
             $session->up($results);
-        endif;
+        } else if(is_array( $results ) && $results['status'] == 400) {
+            $data['errors'] = $results['message'];
+        }
 
         
         if( \Horus\App\Services\SessionUp::exists() ) :
             redirect('/dashboard');
         else : 
-            redirect('/login');
+            redirect('/login', $data);
         endif;
     }
 

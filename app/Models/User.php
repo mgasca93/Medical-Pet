@@ -16,5 +16,6 @@ class User{
     public $phone;
     public $birthday;
     public $rol;
+    public $status;
 
 }
