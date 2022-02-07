@@ -14,37 +14,37 @@ class Env
      * Database host
      * @var string
      */
-    const DB_HOST = 'localhost';
+    const DB_HOST = '';
 
     /**
      * Database name
      * @var string
      */
-    const DB_NAME = 'pet_clinical';
+    const DB_NAME = '';
 
     /**
      * Database user
      * @var string
      */
-    const DB_USER = 'mgasca93';
+    const DB_USER = '';
 
     /**
      * Database password
      * @var string
      */
-    const DB_PASSWORD = 'DbPL259#';
+    const DB_PASSWORD = '';
 
      /**
      * Database driver
      * @var string
      */
-    const DB_DRIVER = 'mysql';
+    const DB_DRIVER = '';
 
      /**
      * Database driver
      * @var string
      */
-    const DB_CHARSET = 'utf8mb4';
+    const DB_CHARSET = '';
 
     /**
      * Show or hide error messages on screen
