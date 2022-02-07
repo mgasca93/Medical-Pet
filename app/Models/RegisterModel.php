@@ -50,7 +50,7 @@ class RegisterModel extends Model{
 
     public function insert(array $data){
 
-        $results = [];
+        $response = [];
         if(!$this->userExists($data)) :
 
             $this->query = "INSERT INTO users(name, lastname, username, passwd, email, user_type_id)
@@ -58,15 +58,22 @@ class RegisterModel extends Model{
             ('$data[firstname]', '$data[lastname]', '$data[username]', '$data[passwd]', '$data[email]', 3)";
             $results = $this->execute_query();
 
+            if ($results) : 
+                $response['status'] = 200;
+                $response['message'] = 'Usuario registrado con éxito.';
+            endif;
+        else :
+            $response['status'] = 400;
+            $response['message'] = 'Este usuario ya existe.';
         endif;
 
-        return $results;
+        return $response;
     }
 
     private function userExists(array $data){
 
         $flag = false;
-        $this->query = "SELECT * FROM users WHERE username = '$data[username]' AND email = '$data[email]' AND passwd = '$data[passwd]'";
+        $this->query = "SELECT * FROM users WHERE username = '$data[username]' AND email = '$data[email]'";
         
         $this->open_connection();
         $results =  $this->conn->query($this->query);

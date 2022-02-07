@@ -34,7 +34,7 @@ function setTitle( $title = '' ) {
  * @return <pre></pre>
  */
 function debug( $data ) {
-    echo "<pre>";print_r($data);echo"</pre>";exit();
+    echo "<pre>";print_r($data);echo"</pre>";
 }
 
 /**
@@ -45,10 +45,26 @@ function debug( $data ) {
  */
 function redirect( $url, $data = [] ) {
 
-    if(array_key_exists('message', $data)) :
-        $_SESSION['message'] = $data['message'];
+    $response = array();
+    if(array_key_exists('errors', $data) || array_key_exists('success', $data)) :
+        foreach($data as $clave => $valor) :
+            switch($clave) :
+
+                case 'errors' :
+                    $response['status'] = 'error';
+                    $response['text'] = $valor;
+                break;
+                case 'success' :
+                    $response['status'] = 'success';
+                    $response['text'] = $valor;
+                break;
+
+            endswitch;
+        endforeach;
     endif;
-   
+    
+    $_SESSION['message'] = $response;
+
     header( "location: $url" );    
     die();
 }
@@ -59,26 +75,13 @@ function redirect( $url, $data = [] ) {
  * 
  * @return string
  */
-function showMessage(){
-    $message = $_SESSION['message'];
+function messageRedirect() : array{
+
+    $message = (isset($_SESSION['message'])) ? $_SESSION['message'] : [];
     unset($_SESSION['message']);
     return $message;
 }
 
-/**
- * Funcion que me permite validar si existe un mensaje
- * flash a partir de una session nombrada message
- * 
- * @return string
- */
-function messageExists(){
-    $flag = false;
-    if(isset($_SESSION['message'])) :
-        $flag = true;
-    endif;
-
-    return $flag;
-}
 
 /**
  * Valido si existe una session activa
