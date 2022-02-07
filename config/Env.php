@@ -14,25 +14,25 @@ class Env
      * Database host
      * @var string
      */
-    const DB_HOST = 'host';
+    const DB_HOST = 'localhost';
 
     /**
      * Database name
      * @var string
      */
-    const DB_NAME = 'db_name';
+    const DB_NAME = 'pet_clinical';
 
     /**
      * Database user
      * @var string
      */
-    const DB_USER = 'db_user';
+    const DB_USER = 'mgasca93';
 
     /**
      * Database password
      * @var string
      */
-    const DB_PASSWORD = 'db_passwd';
+    const DB_PASSWORD = 'DbPL259#';
 
      /**
      * Database driver
@@ -51,4 +51,10 @@ class Env
      * @var boolean
      */
     const SHOW_ERRORS = true;
+
+    /**
+     * API KEY mailchimp
+     * @var boolean
+     */
+    const MAIL_API_KEY = '9a7f788aeb28db7cea9f815eb50c8b0e-us14';
 }

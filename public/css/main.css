@@ -94,7 +94,7 @@
 **/
 .success-alert{
     background-color:var(--success-bg-color) !important;
-    color: var(--main-text-color) !important;
+    color: var(--light-text) !important;
 }
 
 .info-alert{
@@ -107,9 +107,9 @@
     color: var(--main-text-color) !important;
 }
 
-.warnin-alert{
+.danger-alert{
     background-color:var(--danger-bg-color) !important;
-    color: var(--main-text-color) !important;
+    color: var(--light-text) !important;
 }
 
 /**

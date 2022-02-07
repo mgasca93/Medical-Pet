@@ -22,6 +22,7 @@ class App{
         $router->add('logout', ['controller' => 'LoginController', 'action' => 'logout']);
 
         $router->add('dashboard', ['controller' => 'Dashboard\\DashboardController', 'action' => 'index']);
+        
         $router->add('register', ['controller' => 'PagesController', 'action' => 'register']);
         $router->add('register/validate', ['controller' => 'RegisterController', 'action' => 'index']);
         $router->add('register/validate/email', ['controller' => 'RegisterController', 'action' => 'validateEmail']);

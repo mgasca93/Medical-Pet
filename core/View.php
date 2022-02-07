@@ -8,6 +8,7 @@ namespace Horus\Core;
  * PHP version 7.0
  */
 
+
 class View
 {
 
@@ -22,11 +23,16 @@ class View
     public static function render($view, $args = [])
     {
         extract($args, EXTR_SKIP);
-
+        $errors = messageRedirect();
+        $message = new Messages();
+        foreach($errors as $index => $value){
+            $message->$index = $value;
+        }
+    
         $file = dirname(__DIR__) . "/resources/Views/$view";  // relative to Core directory
 
         if (is_readable($file)) {
-            require $file;
+            require_once $file;
         } else {
             throw new \Exception("$file not found");
         }
