@@ -56,5 +56,5 @@ class Env
      * API KEY mailchimp
      * @var boolean
      */
-    const MAIL_API_KEY = '9a7f788aeb28db7cea9f815eb50c8b0e-us14';
+    const MAIL_API_KEY = '';
 }
